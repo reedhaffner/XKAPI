@@ -24,6 +24,9 @@
                 style="background-color: yellow;">#</span>ipsum)</li>
         <ul>
             <li>default = <code style="background-color: yellow">#.-=+_!$*:~?%^&;</code></li>
+            <li>For reserved characters, such as #, &, and ?, please use <a
+                    href="https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters">Percent-encoding</a>
+            </li>
         </ul>
         <li>pattern - Changes how the password is formed.</li>
         <ul>
@@ -47,6 +50,9 @@
         = <code>02=reality=nonquantitative=remembers=underpaying=pioneys=21</code></p>
     <p><a href="/api?separators=-^">/api?separators=-^</a>
         = <code>demayne^catabolized^recommendably^dynastical^41</code></p>
+    <p><a href="/api?separators=%3F">/api?separators=%3F</a>
+        = <code>overpackages?headful?grimoires?laminates?12</code> <span style="background-color: yellow;">(%3F is
+            ?)</span></p>
     <p><a href="/api?pattern=wd">/api?pattern=wd</a>
         = <code>sculduddery1</code></p>
     <p><a href="/api?transform=uppercase">/api?transform=uppercase</a>
