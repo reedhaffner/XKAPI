@@ -1,0 +1,18 @@
+{
+  "name": "xkapi",
+  "version": "1.0.0",
+  "description": "A GET API for XKPasswd",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Reed Haffner",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "xkpasswd": "^1.0.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.3"
+  }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>XKAPI</title>
+</head>
+
+<body>
+    <h1>XKAPI</h1>
+    <h2>A simple GET endpoint for creating XKPasswds</h2>
+    <hr>
+    <p>Avaliable at <a href="/api">/api</a></p>
+    <p>Four different GET parameters:</p>
+    <ul>
+        <li>complexity - Changes the complexity of the password. See <a
+                href="https://www.npmjs.com/package/xkpasswd#complexity-levels">here</a> for more information</li>
+        <ul>
+            <li>default = 5</li>
+        </ul>
+        <li>separators - Changes the characters between the words (lorem<span
+                style="background-color: yellow;">#</span>ipsum)</li>
+        <ul>
+            <li>default = <code style="background-color: yellow">#.-=+_!$*:~?%^&;</code></li>
+        </ul>
+        <li>pattern - Changes how the password is formed.</li>
+        <ul>
+            <li>w - lowercase word</li>
+            <li>W - uppercase word</li>
+            <li>s - separator character</li>
+            <li>d - random digit</li>
+        </ul>
+        <li>transform - Changes how each word is capitalized</li>
+        <ul>
+            <li>alternate - EVERY other WORD is CAPITALIZED</li>
+            <li>uppercase - EVERY WORD IS CAPITALIZED</li>
+            <li>random - every word IS pseudo RANDOMLY CAPITALIZED</li>
+        </ul>
+    </ul>
+    <hr>
+    <h2>Examples</h2>
+    <p><a href="/api">/api</a>
+        = <code>didelphous.benzidine.cynopodous.isocyanate.99</code></p>
+    <p><a href="/api?complexity=6">/api?complexity=6</a>
+        = <code>02=reality=nonquantitative=remembers=underpaying=pioneys=21</code></p>
+    <p><a href="/api?separators=-^">/api?separators=-^</a>
+        = <code>demayne^catabolized^recommendably^dynastical^41</code></p>
+    <p><a href="/api?pattern=wd">/api?pattern=wd</a>
+        = <code>sculduddery1</code></p>
+    <p><a href="/api?transform=uppercase">/api?transform=uppercase</a>
+        = <code>ANTIGENE.PALATINATE.TELEOLOGIST.ELECTROCARDIOGRAPH.88</code></p>
+    <p><a
+            href="/api?separators=-&pattern=ddswswsdd&transform=random">/api?separators=-&pattern=ddswswsdd&transform=random</a>
+        = <code>18-chevroned-KHUTBAHS-19</code></p>
+</body>
+
+</html>
