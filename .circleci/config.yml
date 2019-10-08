@@ -1,0 +1,18 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: frolvlad/alpine-python3
+    steps:
+      - run: apk add --update rsync openssh bash
+      - add_ssh_keys
+      - run: echo '45.32.131.184 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBNzrIs4rbHga1S8ZhvN2fcN15AQRwaZeKvFO0PyJYNoymS0exuvdhOTKZiOw8mBhpweEjdsyc0iRPmc6seFEUP0=' >> ~/.ssh/known_hosts
+      - checkout
+      - run: |
+          case $CIRCLE_BRANCH in
+            master)
+              echo master > database.txt
+              rsync -va --delete ./ root@45.32.131.184:/root/XKAPI/
+              ssh root@45.32.131.184 'cd traefik && docker-compose stop xkapi && docker-compose up -d --build xkapi'
+              ;;
+          esac
