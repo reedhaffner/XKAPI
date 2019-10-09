@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: frolvlad/alpine-python3
+      - image: alpine
     steps:
       - run: apk add --update rsync openssh bash
       - add_ssh_keys
