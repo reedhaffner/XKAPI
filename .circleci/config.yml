@@ -13,6 +13,6 @@ jobs:
             master)
               echo master > database.txt
               rsync -va --delete ./ root@45.77.6.116:/root/XKAPI/
-              ssh root@45.77.6.116 'echo hi'
+              ssh root@45.77.6.116 'cd XKAPI && docker stop XKAPI && docker rm XKAPI && docker build . -t xkapi && docker run --name XKAPI --network luna --restart always --ip 172.18.0.2 -d xkapi'
               ;;
           esac
