@@ -6,13 +6,13 @@ jobs:
     steps:
       - run: apk add --update rsync openssh bash
       - add_ssh_keys
-      - run: echo '45.32.131.184 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBNzrIs4rbHga1S8ZhvN2fcN15AQRwaZeKvFO0PyJYNoymS0exuvdhOTKZiOw8mBhpweEjdsyc0iRPmc6seFEUP0=' >> ~/.ssh/known_hosts
+      - run: echo '45.77.6.116 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC6hr2GtclRULAfzC5vV7UfvZ13k+d+ACddHzCdHIuX8irL9/cACZmTFK3sgR+8el3fzinMpyPG0YfwKn2MRze5CLJSmQmmu3GRfAgZI/qWJ32/CYtpIgTq6IHBi8Fo8Dj8dI94+JVco80uVMIbySGU+qYu36cphIs6WxGlLe8ZLJf/3x60Tb9ZtHdRO8MJvciaYnP0gnCIXYKcg1JOm+FiBYoRlN+B/nARXO0uJ0i6oIH0bkjoIV2BbduY+6+I2DWUv0fhCNQbD82Vk+o51bljSoLDbUUTu0zM6jz37gAQ8ab9mTjZ9yxft9xvmOpI9JP7wvilL4rpIP5L2ZypaGXf' >> ~/.ssh/known_hosts
       - checkout
       - run: |
           case $CIRCLE_BRANCH in
             master)
               echo master > database.txt
-              rsync -va --delete ./ root@45.32.131.184:/root/XKAPI/
-              ssh root@45.32.131.184 'cd traefik && docker-compose stop xkapi && docker-compose up -d --build xkapi'
+              rsync -va --delete ./ root@45.77.6.116:/root/XKAPI/
+              ssh root@45.77.6.116 'echo hi'
               ;;
           esac
