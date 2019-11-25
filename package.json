@@ -10,7 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "xkpasswd": "^1.0.5"
+    "xkpasswd": "^1.0.5",
+    "cors": "^2.8.5"
   },
   "devDependencies": {
     "nodemon": "^1.19.3"

@@ -1,16 +1,13 @@
 var express = require('express');
 var xkpasswd = require('xkpasswd');
 var path = require('path');
+var cors = require('cors')
 var app = express();
 
 var invalidpattern = /[^swdW]+/
 var validpattern = /[swdW]+/
 
-app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
+app.use(cors())
 
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + '/index.html'))
